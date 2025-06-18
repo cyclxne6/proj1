@@ -4,8 +4,9 @@ pygame.init()
 SCREEN_WIDTH = 1600
 SCREEN_HEIGHT = 900
 
-#d = delta
-# so dx = delta x, dt = delta time in milliseconds
+
+
+
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background=pygame.image.load('BHBackgroundtest.png')
 background = pygame.transform.scale(background, (SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -14,17 +15,17 @@ clock = pygame.time.Clock()
 
 
 player = pygame.Rect(800, 450, 50, 50)
-speed = 25 # 10 pixels/second
+speed = 10 # 10 pixels/second
 
 stillplaying = True
 while stillplaying:
     screen.blit(background, (0, 0))
-    dt = clock.tick(60) / 1000 #60fps,
+    dt = clock.tick(240) / 1000 # 240fps
 
 
 
     pygame.draw.rect(screen, (255, 255, 255), player)
-
+    # SOCD intended
     keys = pygame.key.get_pressed()
     dx = dy = 0
     if keys[pygame.K_a]:
